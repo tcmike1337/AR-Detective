@@ -6,15 +6,25 @@ using UnityEngine;
 namespace ARDetective {
 
     public class GameState
-    {
+    {		
+		//Fields
         private enum GS
         {
             StartMenu, OptionMenu, Intro, Investigation, Inventory, Quiz, Outro
         }
         private static int gameState = GS.StartMenu;
-
         private static List<Clue> foundClues = new List<Clue>();
 
+		//Methods
+		public static List<Clue> getClues()
+		{
+			return List<Clue>(foundClues);
+		}
+		
+		public static void addClue(Clue clue)
+		{
+			return foundClues.add(clue);
+		}
 
         public static float getClueTotal()
         {
@@ -24,26 +34,12 @@ namespace ARDetective {
             }
             return totalVal;
         }
-
+		
         public static int getQuizScore()
         {
             return 0;
         }
-
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-
+		
+		
     }
-
 }
