@@ -11,7 +11,7 @@ namespace ARDetective {
         {
             StartMenu, OptionMenu, Intro, Investigation, Inventory, Quiz, Outro
         }
-        private static int gameState = GS.StartMenu;
+        private static int gameState = (int)GS.StartMenu;
 
         private static List<Clue> foundClues = new List<Clue>();
 
